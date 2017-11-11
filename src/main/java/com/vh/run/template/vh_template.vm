@@ -1,0 +1,118 @@
+package ${genpkg};
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import android.app.Activity;
+import android.app.Fragment;
+import android.view.View.OnClickListener;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.os.Looper;
+import android.os.Parcelable;
+import android.view.View;
+import android.view.View.OnTouchListener;
+import android.webkit.WebView;
+import android.widget.*;
+import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
+
+import ${genr}.R;
+
+public class VH_$xmllayout.name {
+
+
+    private View mRootView;
+
+	#foreach( $adapterview in $xmllayout.adapterviews)
+	public $adapterview.qualifiedclazz ${adapterview.id};
+	#end
+
+	#foreach( $customView in $xmllayout.customViews)
+	public $customView.qualifiedclazz ${customView.id};
+	#end
+
+	#foreach( $f in $xmllayout.fragments)
+	public $f.fragmentclazz ${f.id};
+	#end
+
+	#foreach( $image in $xmllayout.images)
+	public $image.qualifiedclazz ${image.id};
+	#end
+
+	#foreach( $i in $xmllayout.includes)
+	public VH_${i.qualifiedclazz} ${i.id}=new VH_${i.qualifiedclazz}();
+	public View view_${i.id};
+	#end
+
+	#foreach( $layout in $xmllayout.layouts)
+	public $layout.qualifiedclazz $layout.id;
+	#end
+
+	#foreach( $text in $xmllayout.texts)
+	public $text.qualifiedclazz ${text.id};
+	#end
+
+	#foreach( $rg in $xmllayout.rgroup)
+	public $rg.qualifiedclazz ${rg.id};
+	#end
+
+
+    /**
+     * initView
+     * @param rootView
+     */
+	public void initViews(View rootView){
+	    this.mRootView = rootView;
+
+	    #set($no=0)
+	    #foreach( $adapterview in $xmllayout.adapterviews)
+	    ${adapterview.id}=(${adapterview.qualifiedclazz})rootView.findViewById(R.id.${adapterview.id});
+	    #set($no=$no+1)
+	    #end
+
+	    #foreach( $customView in $xmllayout.customViews)
+	    ${customView.id}=(${customView.qualifiedclazz})rootView.findViewById(R.id.${customView.id});
+	    #set($no=$no+1)
+	    #end
+
+	    #foreach( $image in $xmllayout.images)
+	    ${image.id}=(${image.qualifiedclazz})rootView.findViewById(R.id.${image.id});
+	    #set($no=$no+1)
+	    #end
+
+	    #foreach( $layout in $xmllayout.layouts)
+	    ${layout.id}=(${layout.qualifiedclazz})rootView.findViewById(R.id.${layout.id});
+	    #set($no=$no+1)
+	    #end
+
+	    #foreach( $text in $xmllayout.texts)
+	    ${text.id}=(${text.qualifiedclazz})rootView.findViewById(R.id.${text.id});
+	    #set($no=$no+1)
+	    #end
+
+	    #foreach( $rg in $xmllayout.rgroup)
+	    ${rg.id}=(${rg.qualifiedclazz})rootView.findViewById(R.id.${rg.id});
+		#set($rno=$rno+1)
+		#end
+
+	    #foreach( $i in $xmllayout.includes)
+	    view_${i.id}=rootView.findViewById(R.id.${i.id});
+	    ${i.id}.initViews(view_${i.id});
+	    #end
+	}
+
+	/**
+     * initView
+     * @param activity
+     */
+	public void initViews(Activity activity){
+		initViews(activity.getWindow().getDecorView());
+	}
+
+	public View getRootView() {
+	    return this.mRootView;
+	}
+}
