@@ -19,10 +19,10 @@ public class JHH extends JFrame implements ActionListener {
     public JHH() {
         this.setTitle("http://blog.csdn.net/xiaxl");
         this.add(chengButton, BorderLayout.CENTER);
-        this.setBounds(20, 20, 800, 600);
+        this.setBounds(0, 0, 600, 400);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        chengButton.setBounds(20, 20, 800, 600);
+        chengButton.setBounds(0, 0, 600, 400);
         chengButton.addActionListener(this);
     }
 
