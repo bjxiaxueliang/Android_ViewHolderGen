@@ -17,24 +17,24 @@ https://github.com/xiaxveliang/Android_ViewHolderGen
 
 ### 一、github中下载、解压Android_ViewHolderGen.rar
 
-![这里写图片描述](http://img.blog.csdn.net/20171111160412542?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGlheGw=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![enter image description here](https://raw.githubusercontent.com/xiaxveliang/Android_ViewHolderGen/master/image/0001.png)
 
 ### 二、解压后的目录结构如下
-![这里写图片描述](http://img.blog.csdn.net/20171111160603008?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGlheGw=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![enter image description here](https://raw.githubusercontent.com/xiaxveliang/Android_ViewHolderGen/master/image/0002.png)
 
 
 ### 三、将需要生成ViewHolder的 *.xml 文件添加到 “Android_ViewHolderGen\xml” 目录下
-![这里写图片描述](http://img.blog.csdn.net/20171111160659818?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGlheGw=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![enter image description here](https://raw.githubusercontent.com/xiaxveliang/Android_ViewHolderGen/master/image/0003.png)
 
 ### 四、双击运行“Android_ViewHolderGen.jar”
 
-![这里写图片描述](http://img.blog.csdn.net/20171111160729610?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGlheGw=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![enter image description here](https://raw.githubusercontent.com/xiaxveliang/Android_ViewHolderGen/master/image/0004.png)
 
 ### 五、点击下图中的大按钮
 
-![这里写图片描述](http://img.blog.csdn.net/20171111160754849?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGlheGw=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![enter image description here](https://raw.githubusercontent.com/xiaxveliang/Android_ViewHolderGen/master/image/0005.png)
 
-![这里写图片描述](http://img.blog.csdn.net/20171111161508197?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGlheGw=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![enter image description here](https://raw.githubusercontent.com/xiaxveliang/Android_ViewHolderGen/master/image/0006.png)
 
 
 
