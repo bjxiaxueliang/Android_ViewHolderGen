@@ -7,7 +7,7 @@ import java.util.HashMap;
 /**
  * XML文件列表
  */
-public class XMLFileLister {
+public class XMLFileListBean {
     /**
      *
      */
@@ -39,20 +39,22 @@ public class XMLFileLister {
 
     /**
      * 以列表的形式返回文件路径，例如：
+     * 
+     * test_main_layout.xml
      * D:\WS_Studio\Android_ViewHolderGen\src\main\resources\xml\layout\test_main_layout.xml
+     * 
+     * test_title_layout.xml
      * D:\WS_Studio\Android_ViewHolderGen\src\main\resources\xml\layout\test_title_layout.xml
      *
      * @return
      */
     public ArrayList<String> mergeAndroidxmllist() {
+        System.out.println("--- mergeAndroidxmllist ---");
         File dir = new File(mPath);
-
         System.out.println("dir: " + dir);
-
         if (dir.exists()) {
             System.out.println("dir.exists(): " + dir.exists());
         }
-
         //
         if (!dir.isDirectory()) {
             System.out.println("dir.isDirectory(): " + dir.isDirectory());
@@ -60,13 +62,17 @@ public class XMLFileLister {
         }
         //--------xml路径--------
         File[] flist = dir.listFiles();
+        System.out.println("flist: " + flist);
         for (int i = 0; i < flist.length; i++) {
+            System.out.println("i: " + i);
             File f = flist[i];
+            System.out.println("file : " + f);
             // 以xml结尾
             if (f.getName().endsWith("xml") && !result.containsKey(f.getName())) {
                 // 以文件名为key 以path为value
                 result.put(f.getName(), f.getAbsolutePath());
-
+                //
+                System.out.println("name: " + f.getName());
                 System.out.println("path: " + f.getAbsolutePath());
             }
         }
@@ -86,9 +92,14 @@ public class XMLFileLister {
     }
 
     public void mergeDir(File dir) {
+        System.out.println("--- mergeDir ---");
+        System.out.println("dir: "+dir);
         File[] flist = dir.listFiles();
+        System.out.println("flist: "+flist);
         for (int i = 0; i < flist.length; i++) {
+            System.out.println("i: "+i);
             File f = flist[i];
+            System.out.println("file: "+f);
             // 以xml结尾
             if (f.getName().endsWith("xml") && !result.containsKey(f.getName())) {
                 // 以文件名为key 以path为value

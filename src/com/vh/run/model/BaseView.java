@@ -22,7 +22,7 @@ public class BaseView {
     public void setId(String id) {
         this.id = id;
 
-        setFormalId(FormalNameUtil.formalize(id));
+        setFormalId("m"+FormalNameUtil.formalize(id));
     }
 
     public String getQualifiedclazz() {

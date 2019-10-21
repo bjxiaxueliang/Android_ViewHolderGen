@@ -16,8 +16,8 @@ import javax.xml.parsers.SAXParserFactory;
 public class XMLLayoutExtractor {
 
 
-    public XMLLayoutLister parseXML(InputStream in) throws Exception {
-
+    public XMLLayoutBean parseXML(InputStream in) throws Exception {
+        System.out.println("--- parseXML ---");
         InputSource saxin = new InputSource(in);
 
         //获取SAX分析器的工厂实例，专门负责创建SAXParser分析器
@@ -40,7 +40,7 @@ public class XMLLayoutExtractor {
 
     public static void main(String[] args) throws Exception {
         InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream("xml/layout/test_main_layout.xml");
-        XMLLayoutLister t = new XMLLayoutExtractor().parseXML(in);
+        XMLLayoutBean t = new XMLLayoutExtractor().parseXML(in);
         System.out.println();
     }
 

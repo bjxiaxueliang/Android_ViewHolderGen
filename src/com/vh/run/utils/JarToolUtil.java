@@ -21,7 +21,7 @@ public class JarToolUtil {
     }
 
     /**
-     * 获取jar目录
+     * 获取jar 所在目录
      *
      * @return
      */

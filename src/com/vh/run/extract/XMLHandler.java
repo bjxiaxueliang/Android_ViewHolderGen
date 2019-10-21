@@ -23,7 +23,7 @@ import java.util.List;
 public class XMLHandler extends DefaultHandler {
 
     //-------------------存放View数据的列表-----------------------
-    public XMLLayoutLister xmll = new XMLLayoutLister();
+    public XMLLayoutBean xmll = new XMLLayoutBean();
 
     //--------------------比对的View数据----------------------
     private String[] AdapterViews = {"ListView", "GridView", "Spinner", "AdapterViewFlipper", "StackView"};

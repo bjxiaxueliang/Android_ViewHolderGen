@@ -14,10 +14,13 @@ import java.util.ArrayList;
 /**
  * 各种View列表
  */
-public class XMLLayoutLister {
+public class XMLLayoutBean {
 
     // XML文件名称
     private String name;
+    
+    // 格式化的name(去掉"_"并把 首字母大写)
+    private String formalName;
 
     private ArrayList<TextView> texts = new ArrayList<TextView>();
 
@@ -41,8 +44,19 @@ public class XMLLayoutLister {
 
     public void setName(String name) {
         this.name = name;
+        //
+        setFormalName(FormalNameUtil.formalize(name)+"VH");
     }
 
+    public String getFormalName() {
+        return formalName;
+    }
+
+    public void setFormalName(String formalName) {
+        this.formalName = formalName;
+    }
+    
+    
     public ArrayList<TextView> getTexts() {
         return texts;
     }
