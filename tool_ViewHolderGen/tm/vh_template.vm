@@ -154,7 +154,7 @@ public class VH_$xmllayout.name {
             return this;
         }
 
-        public CourseTrainingVH create() {
+        public VH_$xmllayout.name create() {
             return mViewHolder;
         }
     }
