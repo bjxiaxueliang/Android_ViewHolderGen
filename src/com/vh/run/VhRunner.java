@@ -42,8 +42,8 @@ public class VhRunner {
         /**
          * resources资源路径
          */
-        // ../Android_ViewHolderGen/xml_tm/xml
-        String xmlPathDir = new File(rootPathDir, "xml_tm/xml").getPath();
+        // ../Android_ViewHolderGen/input/xml
+        String xmlPathDir = new File(rootPathDir, "input/xml").getPath();
         LogUtils.d(TAG,"xmlPathDir: " + xmlPathDir);
         /**
          *
@@ -76,7 +76,7 @@ public class VhRunner {
         // 模版
         VelocityEngine ve = new VelocityEngine();
         ve.init();
-        Template template = ve.getTemplate("xml_tm/tm/vh_template.vm");
+        Template template = ve.getTemplate("input/tm/vh_template.vm");
 
         // ------------------获取所有layout文件-----------------
         XMLFileListBean xmlFlister = new XMLFileListBean();

@@ -2,7 +2,7 @@ package com.vh.run.utils;
 
 public class LogUtils {
 
-    private static final String DEFAULT_TAG = "xiaxl";
+    private static final String DEFAULT_TAG = "XLOG";
 
 
     public static void d(String tag, String s) {
