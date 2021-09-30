@@ -74,9 +74,10 @@ public class VhRunner {
         velocityContext.put("genpkg", genVhPkg); // com.vh.gen
         velocityContext.put("genr", genVhR); // com.vh.gen
         // 模版
-        VelocityEngine ve = new VelocityEngine();
-        ve.init();
-        Template template = ve.getTemplate("input/tm/vh_template.vm");
+        Template template = Velocity.getTemplate("input/tm/vh_template.vm");
+//        VelocityEngine ve = new VelocityEngine();
+//        ve.init();
+//        Template template = ve.getTemplate("/input/tm/vh_template.vm");
 
         // ------------------获取所有layout文件-----------------
         XMLFileListBean xmlFlister = new XMLFileListBean();
