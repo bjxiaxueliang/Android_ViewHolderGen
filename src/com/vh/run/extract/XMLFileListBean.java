@@ -1,5 +1,7 @@
 package com.vh.run.extract;
 
+import com.vh.run.utils.LogUtils;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,6 +10,7 @@ import java.util.HashMap;
  * XML文件列表
  */
 public class XMLFileListBean {
+    private static final String TAG = "XMLFileListBean";
     /**
      *
      */
@@ -49,31 +52,31 @@ public class XMLFileListBean {
      * @return
      */
     public ArrayList<String> mergeAndroidxmllist() {
-        System.out.println("--- mergeAndroidxmllist ---");
+        LogUtils.d(TAG,"--- mergeAndroidxmllist ---");
         File dir = new File(mPath);
-        System.out.println("dir: " + dir);
+        LogUtils.d(TAG,"dir: " + dir);
         if (dir.exists()) {
-            System.out.println("dir.exists(): " + dir.exists());
+            LogUtils.d(TAG,"dir.exists(): " + dir.exists());
         }
         //
         if (!dir.isDirectory()) {
-            System.out.println("dir.isDirectory(): " + dir.isDirectory());
+            LogUtils.d(TAG,"dir.isDirectory(): " + dir.isDirectory());
             return new ArrayList<String>();
         }
         //--------xml路径--------
         File[] flist = dir.listFiles();
-        System.out.println("flist: " + flist);
+        LogUtils.d(TAG,"flist: " + flist);
         for (int i = 0; i < flist.length; i++) {
-            System.out.println("i: " + i);
+            LogUtils.d(TAG,"i: " + i);
             File f = flist[i];
-            System.out.println("file : " + f);
+            LogUtils.d(TAG,"file : " + f);
             // 以xml结尾
             if (f.getName().endsWith("xml") && !result.containsKey(f.getName())) {
                 // 以文件名为key 以path为value
                 result.put(f.getName(), f.getAbsolutePath());
                 //
-                System.out.println("name: " + f.getName());
-                System.out.println("path: " + f.getAbsolutePath());
+                LogUtils.d(TAG,"name: " + f.getName());
+                LogUtils.d(TAG,"path: " + f.getAbsolutePath());
             }
         }
 
@@ -92,20 +95,20 @@ public class XMLFileListBean {
     }
 
     public void mergeDir(File dir) {
-        System.out.println("--- mergeDir ---");
-        System.out.println("dir: "+dir);
+        LogUtils.d(TAG,"--- mergeDir ---");
+        LogUtils.d(TAG,"dir: "+dir);
         File[] flist = dir.listFiles();
-        System.out.println("flist: "+flist);
+        LogUtils.d(TAG,"flist: "+flist);
         for (int i = 0; i < flist.length; i++) {
-            System.out.println("i: "+i);
+            LogUtils.d(TAG,"i: "+i);
             File f = flist[i];
-            System.out.println("file: "+f);
+            LogUtils.d(TAG,"file: "+f);
             // 以xml结尾
             if (f.getName().endsWith("xml") && !result.containsKey(f.getName())) {
                 // 以文件名为key 以path为value
                 result.put(f.getName(), f.getAbsolutePath());
 
-                System.out.println("path: " + f.getAbsolutePath());
+                LogUtils.d(TAG,"path: " + f.getAbsolutePath());
             }
         }
     }

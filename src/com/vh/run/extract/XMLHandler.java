@@ -9,6 +9,7 @@ import com.vh.run.model.Include;
 import com.vh.run.model.Layout;
 import com.vh.run.model.RadioGroup;
 import com.vh.run.model.TextView;
+import com.vh.run.utils.LogUtils;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -21,6 +22,8 @@ import java.util.List;
  * 比对解析Layout文件
  */
 public class XMLHandler extends DefaultHandler {
+
+    private static final String TAG = "XMLHandler";
 
     //-------------------存放View数据的列表-----------------------
     public XMLLayoutBean xmll = new XMLLayoutBean();
@@ -50,10 +53,10 @@ public class XMLHandler extends DefaultHandler {
     @Override
     public void startElement(String uri, String localName, String qualifiedName, Attributes attributes) throws SAXException {
 
-        System.out.println("---startElement---");
-        System.out.println("uri: " + uri);
-        System.out.println("localName: " + localName);
-        System.out.println("qualifiedName: " + qualifiedName);
+        LogUtils.d(TAG,"---startElement---");
+        LogUtils.d(TAG,"uri: " + uri);
+        LogUtils.d(TAG,"localName: " + localName);
+        LogUtils.d(TAG,"qualifiedName: " + qualifiedName);
 
         // AdapterViews中查找qualifiedName
         if (binarySearch(Arrays.asList(AdapterViews), qualifiedName) >= 0) {

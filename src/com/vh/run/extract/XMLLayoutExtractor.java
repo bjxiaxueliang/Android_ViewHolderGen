@@ -1,6 +1,7 @@
 package com.vh.run.extract;
 
 import com.vh.run.model.CustomView;
+import com.vh.run.utils.LogUtils;
 
 import org.xml.sax.InputSource;
 
@@ -14,10 +15,11 @@ import javax.xml.parsers.SAXParserFactory;
  * 解析XML
  */
 public class XMLLayoutExtractor {
+    private static final String TAG = "XMLLayoutExtractor";
 
 
     public XMLLayoutBean parseXML(InputStream in) throws Exception {
-        System.out.println("--- parseXML ---");
+        LogUtils.d(TAG,"--- parseXML ---");
         InputSource saxin = new InputSource(in);
 
         //获取SAX分析器的工厂实例，专门负责创建SAXParser分析器
@@ -32,7 +34,7 @@ public class XMLLayoutExtractor {
         // 打印自定义View
         for (Iterator iterator = h.xmll.getCustomViews().iterator(); iterator.hasNext(); ) {
             CustomView c = (CustomView) iterator.next();
-            System.out.println("found customview " + c.getQualifiedclazz());
+            LogUtils.d(TAG,"found customview " + c.getQualifiedclazz());
         }
 
         return h.xmll;
@@ -41,7 +43,6 @@ public class XMLLayoutExtractor {
     public static void main(String[] args) throws Exception {
         InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream("xml/layout/test_main_layout.xml");
         XMLLayoutBean t = new XMLLayoutExtractor().parseXML(in);
-        System.out.println();
     }
 
 
